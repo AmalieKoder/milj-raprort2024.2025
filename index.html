@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="sandbox.html">sandbox</a>
     <header>
         <img src="" alt="logo">
         <h1>Miljøraport</h1>
@@ -20,22 +21,177 @@
     <!-- -->
     <main>
         <section class="modul">
-          <h2>3. Nøkkeltall for avfallsmengder</h1>
-          <p>Tabellen viser totalmengde (kg) for hele 2024 og jan-juli 2025:</p>
-            <div> 
-                <!--<canvas id="myChart"></canvas>-->
+            <h2>Nøkkeltall for avfallsmengder</h2>
+            <p>Tabellen viser totalmengde (kg) for hele 2024 og jan-juli 2025:</p>
+            <div class="canvas-container">
+                <canvas id="myChart" width="600" height="400"></canvas>
             </div>
         </section>
-        <section>
-            <div></div>
+        <section class="modul">
+            <h2>Sorteringsgrad</h2>
+            <p class="info">Sorteringsgraden viser andelen av avfallet som går til materialgjenvinning. 
+               Utvikling: Havnevegen har økt sorteringsgraden fra 57,07 % (2024 helår) til 62,31 % (jan–juli 2025). 
+               Mjåtveit har løftet sorteringsgraden fra 82,57 % (2024 helår) til 89,26 % (jan–juli 2025)
+            </p>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <tr>
+                        <th>Periode/Lokasjon</th>
+                        <th>Sorteringsgrad (%)</th>
+                    </tr>
+                    <tr>
+                        <td>Havnevegen 2024 Hele</td>
+                        <td>57,07</td>
+                    </tr>
+                    <tr>
+                        <td>Havnevegen 2025 Jan–Juli</td>
+                        <td>62.31 </td>
+                    </tr>
+                    <tr>
+                        <td>Mjåtveit 2024 Hele </td>
+                        <td>82,57</td>
+                    </tr>
+                    <tr>
+                        <td>Mjåtveit 2025 Jan–Juli</td>
+                        <td>89.26</td>
+                    </tr>
+                </table>
+            </div>
         </section>
-        <section>
-            <div></div>
+        <section class="modul">
+            <h2>avfallsmengder og sorteringsgrad par lokasjon og periode</h2>
+            <div class="canvas-container">
+                <canvas id="waste-and-sorting-per-location-and-period" width="600" height="400"></canvas>
+            </div>
+            <p>Periode og lokasjon</p>
+            <p style="margin: 0; text-align: start;">I figuren vises:</p>
+            <ul style="margin-top: 0;">
+                <li>Søyler = totalt levert avfall (kg)</li>
+                <li>Rød linje = sorteringsgrad (%)</li>
+            </ul>
         </section>
+        <section class="modul">
+            <h2>Status matavfall</h2>
+            <p class="info"><b>Målet vårt har vært å redusere matavfallet med 25 %.</b> Tallene for 2024 viser 380 kg levert matavfall, mens tallene for januar–juli 2025 viser 200 kg. Dersom vi legger samme nivå til grunn for resten av 2025, vil vi havne på rundt 400 kg for året. <u>Det betyr at vi foreløpig ligger omtrent på samme nivå som i 2024, og at vi ennå ikke har nådd målet om en reduksjon på 25 %.</u> 
+Samtidig har vi startet flere tiltak som legger grunnlaget for å redusere matavfallet framover – blant annet kasser for hønsefor, bedre registrering av matsvinn og vurdering av varmkompostering. Disse tiltakene vil kunne gi oss bedre kontroll og økt mulighet til å oppnå målet i kommende periode. </p>
+            <h3>Matavfall - mål vs. utvikling</h3>
+            <div class="canvas-container">
+                <canvas id="food-waste-goal-vs-development" width="600" height="400"></canvas>
+            </div>
+            <h3>Matavfall - utvikling 2024 og estimat 2025</h3>
+            <div class="canvas-container">
+                <canvas id="food-waste-development-and-estimate" width="600" height="400"></canvas>
+            </div>
+            <h3>Status: bruk av papir</h3>
+            <p>Vi har et overordnet mål om å redusere papirbruken i Gløde med 30%</p>
+            <h4>Måltall</h4>
+            <ul>
+                <li>2024-forbruk: 47 500 ark</li>
+                <li>Mål: 30 % reduksjon → vi skal altså ned til maks 33 250 ark i 2025.</li>
+            </ul>
+            <h4>Status så langt</h4>
+            <ul>
+                <li>Innkjøp hittil i 2025: 12 500 ark 
+For å sjekke status må vi se på tempoet i forbruket: </li>
+                <li>Hvis vi antar at tallene gjelder til og med september 2025, har vi brukt 12 500 ark på 9 måneder. </li>
+                <li>Det gir et snitt på ca. 1 389 ark per måned. </li>
+                <li>Ganger vi opp for hele 2025 (12 måneder): ca. 16 667 ark totalt. </li>
+            </ul>
+            <h4>Sammenligning </h4>
+            <ul>
+                <li>Mål for 2025: 33 250 ark</li>
+                <li>Estimert faktisk forbruk: 16 667 ark ➡️ Vi ligger godt under målet og ser ut til å klare en reduksjon på rundt 65 % (!). </li>
+            </ul>
+            <h4>Videre tiltak for å holde nivået lavt </h4>
+            <p style="margin: 0; text-align: start;">Selv om vi er foran skjema, er det lurt å ha gode vaner: </p>
+            <ul style="margin-top: 0;">
+                <li>Digitale vaner: Ta minst mulig utskrift! </li>
+                <li>Møter uten papirer: Del dokumenter digitalt.</li>
+                <li>Standardinnstillinger på printere: Dobbeltsidig utskrift og "svarthvitt" som standard innstilling.</li>
+                <li>Bevisstgjøring: Utvikling gjennom året.</li>
+                <li>Papirløs arkivering: PlusOffice og SharePoint for kontrakter og skjema for HR/KHMS. </li>
+            </ul>
+        </section>
+        <section class="modul">
+            <h2>Miljøavtrykk</h2>
+            <p class="info">Beregning er gjort med standar utslippsfaktor fra<b>Miljødirektoratet, Avfall Norge</b>
+               og SSB. Forbrenning bidrar med utslipp, mens materialgjenvinning gir spart utslipp.
+               I 2025 (jan-juli) hadde Havnevegen en netto besparelse på ≈1 –2,38 tonn CO₂e2, mens Mjåtveit hadde ≈ 
+               -3,44 tonn CO₂e. Tallene for hele 2024 viser et lignenede mønster, men med noe høyere totale mengder.
+            </p>
+            <b>Miljøavtrykk fra avfall - Jan-Juli 2025</b>
+            <p>
+                Vi har beregnet miljøeffekten av avfallshåndreringen vår ved å bruke standar utslippsfaktor.      
+            </p>
+            <p>Dette viser hvor mye CO₂-ekvivalenter (CO₂e) vi slipper ut – eller sparer – gjennom ulike behandlingstyper:</p>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <tr>
+                        <th>Behandlingstyper</th>
+                        <th>Utslipp (tonn CO₂e per tonn avfalll)</th>
+                        <th>Hva betyr det?</th>
+                    </tr>
+                    <tr>
+                        <td>Forbrenning (restavfall)</td>
+                        <td>+0,36</td>
+                        <td>Utslipp fra fossilt karbon i plast, tekstiler m.m.</td>
+                    </tr>
+                    <tr>
+                        <td>Materialgjenvinning papp/papir</td>
+                        <td>-1,0</td>
+                        <td>Spart utslipp ved å erstatte nytt papir med resirkulert</td>
+                    </tr>
+                    <tr>
+                        <td>Materialgjenvinning trevirke</td>
+                        <td> 0,3 til –0,5</td>
+                        <td>Spart utslipp ved bruk som biobrensel</td>
+                    </tr>
+                    <tr>
+                        <td>Materialgjenvinning EE-avfall</td>
+                        <td>-0,5 til –2,0</td>
+                        <td>Stor gevinst fra gjenvinning av metaller og komponenter</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Havnevegen – Jan–Jul 2025</h3>
+            <ul>
+                <li>Forbrenning: 3,16 tonn → 1,14 tonn CO₂e utslipp</li>
+                <li>Papp/papir: 2,08 tonn → –2,08 tonn CO₂e spart</li>
+                <li>Trevirke: 0,74 tonn → –0,30 tonn CO₂e spart</li>
+                <li>EE-avfall: 0,76 tonn → –1,14 tonn CO₂e spart</li>
+                <li>Netto effekt: ≈ –2,38 tonn CO₂e (mer spart enn sluppet ut)</li>
+            </ul>
+            <h4>Noen sammenligninger</h4>
+            <h4 style="text-align: start;">Utslipp</h4>
+            <ul>
+                <li>Forbrenning: 1,14 tonn CO₂e 
+                <li>≈ 4 tur/retur Oslo–London med fly ✈️</li>
+                <li>≈ 5 700 km bilkjøring 🚗</li></li>
+            </ul>
+            <h4 style="text-align: start;">Besparelser</h4>
+            <ul>
+                <li>
+                    Papp/papir: –2,08 tonn CO₂e 
+                    ≈ 7 tur/retur Oslo–London 
+                    ≈ 10 000 km bilkjøring
+                </li>
+                <li>
+                    Trevirke: –0,30 tonn CO₂e
+                    ≈ 1 tur/retur Oslo–London
+                    ≈ 1 500 km bilkjøring
+                </li> 
+                <li>
+                    EE-avfall: –1,14 tonn CO₂e
+                    ≈ 4 tur/retur Oslo–London
+                    ≈ 5 700 km bilkjøring
+                </li>
+            </ul>
+        </section>
+        <section></section>
     </main>
     <footer>
         <h3>Kontakt oss</h3>
-        <p></p>
+        <p>totallynotaburneraccount@mafia.maf</p>
     </footer>
 </body>
 </html>

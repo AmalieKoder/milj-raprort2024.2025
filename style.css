@@ -1,16 +1,50 @@
+/* Eksempler på farger */
 
 
-body.dark-mode{
-    background-color: rgb(46, 48, 51);
-    color: white;
+:root {
+    /* Light mode */
+    --color-primary: #2e7d32;       /* Skoggrønn Overskrift, knapper, viktige elementer. */
+    --color-secondary: #81c784;     /* Mosegrønn Bakrunner, hover-effekter. */
+    --color-accent: #4fc3f7;        /* Himmelblå Lenker, infografikk, detaljer */
+    --color-bg: #f5f5f5;            /* Lys grå / beige Hovedbakgrunn */
+    --color-text: #333333;          /* Mørke grå / brun Brødtekst */
+    --color-border: #333333;        /* Svart grå, bruk til border */
 }
 
-@media (prefers-color-scheme: dark) {
-    body{
-        background-color: rgb(46, 48, 51);
-        color: white;
-    }
+:root.dark{
+    /* Dark mode */
+    --color-primary: #2e7d32;
+    --color-secondary: #81c784;
+    --color-accent: #4fc3f7;
+    --color-bg: #232527;
+    --color-text: #ffffff;
+    --color-border: #bebebe;
 }
+
+
+
+/* Built in */
+
+body{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+table{
+    border: solid var(--color-border) 1px;
+}
+
+td{
+    border: solid var(--color-border) 1px;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    text-align: start;
+}
+
+
 
 /* Header */
 
@@ -22,9 +56,36 @@ header {
 
 /* Main */
 
+main{
+    max-width: 1000px;
+    margin: auto;
+}
+
+@media screen and (min-width: 1050px) {
+    main {
+        border: solid var(--color-border) 1px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
+
 .modul {
-    display: flex;
-    flex-direction: column;
     margin-top: 6rem;
-    margin-left: 20rem;
+    text-align: center;
+}
+p, h2 {
+    margin: 0;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.info {
+    width: 100%;
+}
+
+.canvas-container{
+    max-width: 600px;
+    margin: auto;
 }
