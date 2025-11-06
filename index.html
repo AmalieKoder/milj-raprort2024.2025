@@ -7,6 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="sandbox.html">sandbox</a>
@@ -33,29 +36,8 @@
                Utvikling: Havnevegen har økt sorteringsgraden fra 57,07 % (2024 helår) til 62,31 % (jan–juli 2025). 
                Mjåtveit har løftet sorteringsgraden fra 82,57 % (2024 helår) til 89,26 % (jan–juli 2025)
             </p>
-            <div style="display: flex; justify-content: center;">
-                <table>
-                    <tr>
-                        <th>Periode/Lokasjon</th>
-                        <th>Sorteringsgrad (%)</th>
-                    </tr>
-                    <tr>
-                        <td>Havnevegen 2024 Hele</td>
-                        <td>57,07</td>
-                    </tr>
-                    <tr>
-                        <td>Havnevegen 2025 Jan–Juli</td>
-                        <td>62.31 </td>
-                    </tr>
-                    <tr>
-                        <td>Mjåtveit 2024 Hele </td>
-                        <td>82,57</td>
-                    </tr>
-                    <tr>
-                        <td>Mjåtveit 2025 Jan–Juli</td>
-                        <td>89.26</td>
-                    </tr>
-                </table>
+            <div class="canvas-container">
+                <canvas id="sorting-grade" width="600" height="400"></canvas>
             </div>
         </section>
         <section class="modul">
@@ -72,16 +54,20 @@
         </section>
         <section class="modul">
             <h2>Status matavfall</h2>
-            <p class="info"><b>Målet vårt har vært å redusere matavfallet med 25 %.</b> Tallene for 2024 viser 380 kg levert matavfall, mens tallene for januar–juli 2025 viser 200 kg. Dersom vi legger samme nivå til grunn for resten av 2025, vil vi havne på rundt 400 kg for året. <u>Det betyr at vi foreløpig ligger omtrent på samme nivå som i 2024, og at vi ennå ikke har nådd målet om en reduksjon på 25 %.</u> 
+            <div class="flex">
+                <img class="img" src="/img/turtle.jpg" alt="">
+                <p class="info"><b>Målet vårt har vært å redusere matavfallet med 25 %.</b> Tallene for 2024 viser 380 kg levert matavfall, mens tallene for januar–juli 2025 viser 200 kg. Dersom vi legger samme nivå til grunn for resten av 2025, vil vi havne på rundt 400 kg for året. <u>Det betyr at vi foreløpig ligger omtrent på samme nivå som i 2024, og at vi ennå ikke har nådd målet om en reduksjon på 25 %.</u> 
 Samtidig har vi startet flere tiltak som legger grunnlaget for å redusere matavfallet framover – blant annet kasser for hønsefor, bedre registrering av matsvinn og vurdering av varmkompostering. Disse tiltakene vil kunne gi oss bedre kontroll og økt mulighet til å oppnå målet i kommende periode. </p>
+            </div>
+            
             <h3>Matavfall - mål vs. utvikling</h3>
             <div class="canvas-container">
                 <canvas id="food-waste-goal-vs-development" width="600" height="400"></canvas>
             </div>
-            <h3>Matavfall - utvikling 2024 og estimat 2025</h3>
-            <div class="canvas-container">
-                <canvas id="food-waste-development-and-estimate" width="600" height="400"></canvas>
-            </div>
+            <p>På tabellen over ser du matavfallet i 2024 hele året og 2025 fra januar til juli og målet for 2025. Den røde søylen viser estimatet for 2025 hvis vi fortsetter å kaste like mye.</p>
+            <p>Hvis vi skal nå målet for 2025 må vi ikke kaste mer en 85Kg matavfall resten av året</p>
+        </section>
+        <section class="modul">
             <h3>Status: bruk av papir</h3>
             <p>Vi har et overordnet mål om å redusere papirbruken i Gløde med 30%</p>
             <h4>Måltall</h4>
@@ -114,11 +100,14 @@ For å sjekke status må vi se på tempoet i forbruket: </li>
         </section>
         <section class="modul">
             <h2>Miljøavtrykk</h2>
-            <p class="info">Beregning er gjort med standar utslippsfaktor fra<b>Miljødirektoratet, Avfall Norge</b>
+            <div class="flex">
+                <p class="info">Beregning er gjort med standar utslippsfaktor fra<b>Miljødirektoratet, Avfall Norge</b>
                og SSB. Forbrenning bidrar med utslipp, mens materialgjenvinning gir spart utslipp.
                I 2025 (jan-juli) hadde Havnevegen en netto besparelse på ≈1 –2,38 tonn CO₂e2, mens Mjåtveit hadde ≈ 
-               -3,44 tonn CO₂e. Tallene for hele 2024 viser et lignenede mønster, men med noe høyere totale mengder.
-            </p>
+               -3,44 tonn CO₂e. Tallene for hele 2024 viser et lignenede mønster, men med noe høyere totale mengder.</p>
+                <img class="img" src="/img/polabear.jpg" alt="">
+            </div>
+            
             <b>Miljøavtrykk fra avfall - Jan-Juli 2025</b>
             <p>
                 Vi har beregnet miljøeffekten av avfallshåndreringen vår ved å bruke standar utslippsfaktor.      
@@ -190,8 +179,14 @@ For å sjekke status må vi se på tempoet i forbruket: </li>
         <section></section>
     </main>
     <footer>
-        <h3>Kontakt oss</h3>
-        <p>totallynotaburneraccount@mafia.maf</p>
+        <div>
+            <h3>Kontakt oss</h3>
+            <p>totallynotaburneraccount@mafia.maf</p>
+        </div>
+        <div>
+            <p>Kilder</p>
+            <a href="https://docs.google.com/document/d/1tapBVVkhyt2kMOoYdr9xol8BoY57FAUPE-wqkMPl3MI/edit?pli=1&tab=t.0">https://docs.google.com/document/d/1tapBVVkhyt2kMOoYdr9xol8BoY57FAUPE-wqkMPl3MI/edit?pli=1&tab=t.0</a>
+        </div>
     </footer>
 </body>
 </html>

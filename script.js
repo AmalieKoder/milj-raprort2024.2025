@@ -22,10 +22,47 @@ document.getElementById('dark-mode').addEventListener('input', () => {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Havnevegen 2024 Hele', 'Havnevegen 2025 Jan–Juli', 'Mjåtveit 2024 Hele', 'Mjåtveit 2025 Jan–Juli'],
+            labels: ['Havnevegen', 'Mjåtveit'],
             datasets: [{
-                label: 'Mengde (kg)',
-                data: [18215, 9075, 11820, 7865],
+                label: 'Mengde (kg) 2024',
+                data: [18215, 11820],
+                borderWidth: 1,
+                hoverBackgroundColor: '#2e7d32',
+                hoverBorderColor: '#2e7d32',
+            },{
+                label: 'Mengde (kg) 2025 Jan–Juli',
+                data: [9075, 7865],
+                borderWidth: 1,
+                hoverBackgroundColor: '#2e7d32',
+                hoverBorderColor: '#2e7d32',
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+{
+    const ctx = document.getElementById('sorting-grade');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Havnevegen', 'Mjåtveit'],
+            datasets: [{
+                label: 'Sorteringsgrad (%) 2024',
+                data: [57.07, 82.57],
+                borderWidth: 1,
+                hoverBackgroundColor: '#2e7d32',
+                hoverBorderColor: '#2e7d32',
+            },{
+                label: 'Sorteringsgrad (%) 2025 Jan–Juli',
+                data: [62.31, 89.26],
                 borderWidth: 1,
                 hoverBackgroundColor: '#2e7d32',
                 hoverBorderColor: '#2e7d32',
@@ -48,7 +85,7 @@ document.getElementById('dark-mode').addEventListener('input', () => {
         datasets: [{
             type: 'bar',
             label: 'Total levert (kg)',
-            data: [12000, 7000, 18000, 5300, 7500, 1100],
+            data: [12000, 7000, 18000, 5300, 7500, 11000],
             hoverBackgroundColor: '#2e7d32',
             hoverBorderColor: '#2e7d32',
         }, {
@@ -67,10 +104,17 @@ document.getElementById('dark-mode').addEventListener('input', () => {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['2024 (baseline)', '2025 (mål -25%)', '2025 (est.)'],
+            labels: ['2024', '2025 jan-juli', 'Mål for 2025'],
             datasets: [{
                 label: 'Kg matavfall',
-                data: [380, 285, 400],
+                data: [380, 200, 285],
+                backgroundColor: '#488ddbff',
+                hoverBackgroundColor: '#2e7d32',
+                hoverBorderColor: '#2e7d32',
+            },{
+                label: 'Kg matavfall (est.)',
+                data: [0, 400, 0],
+                backgroundColor: '#cf5d66ff',
                 hoverBackgroundColor: '#2e7d32',
                 hoverBorderColor: '#2e7d32',
             }]
@@ -79,31 +123,10 @@ document.getElementById('dark-mode').addEventListener('input', () => {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 450
-                }
-            }
-        }
-    });
-}
-
-{
-    const ctx = document.getElementById('food-waste-development-and-estimate');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['2024', '2025 (est.)'],
-            datasets: [{
-                label: 'Kg matavfall',
-                data: [380, 400],
-                hoverBackgroundColor: '#2e7d32',
-                hoverBorderColor: '#2e7d32',
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 450
+                    max: 450,
+                },
+                x:{
+                    stacked: true,
                 }
             }
         }
