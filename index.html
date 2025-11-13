@@ -14,20 +14,19 @@
 <body>
     <a href="sandbox.html">sandbox</a>
     <header>
-        <img src="" alt="logo">
+        <img class="logo" src="/img/glode-logo.webp" alt="logo">
         <h1>Miljøraport</h1>
         <div>
            <label for="dark-mode">Dark Mode</label>
            <input type="checkbox" name="dark-mode" id="dark-mode"> 
         </div>
     </header>
-    <!-- -->
     <main>
         <section class="modul">
             <h2>Nøkkeltall for avfallsmengder</h2>
             <p>Tabellen viser totalmengde (kg) for hele 2024 og jan-juli 2025:</p>
             <div class="canvas-container">
-                <canvas id="myChart" width="600" height="400"></canvas>
+                <canvas id="key-values-for-waste" class="canvas" width="600" height="400"></canvas>
             </div>
         </section>
         <section class="modul">
@@ -37,13 +36,13 @@
                Mjåtveit har løftet sorteringsgraden fra 82,57 % (2024 helår) til 89,26 % (jan–juli 2025)
             </p>
             <div class="canvas-container">
-                <canvas id="sorting-grade" width="600" height="400"></canvas>
+                <canvas id="sorting-grade" class="canvas" width="600" height="400"></canvas>
             </div>
         </section>
         <section class="modul">
             <h2>avfallsmengder og sorteringsgrad par lokasjon og periode</h2>
             <div class="canvas-container">
-                <canvas id="waste-and-sorting-per-location-and-period" width="600" height="400"></canvas>
+                <canvas id="waste-and-sorting-per-location-and-period" class="canvas" width="600" height="400"></canvas>
             </div>
             <p>Periode og lokasjon</p>
             <p style="margin: 0; text-align: start;">I figuren vises:</p>
@@ -62,20 +61,20 @@ Samtidig har vi startet flere tiltak som legger grunnlaget for å redusere matav
             
             <h3>Matavfall - mål vs. utvikling</h3>
             <div class="canvas-container">
-                <canvas id="food-waste-goal-vs-development" width="600" height="400"></canvas>
+                <canvas id="food-waste-goal-vs-development" class="canvas" width="600" height="400"></canvas>
             </div>
             <p>På tabellen over ser du matavfallet i 2024 hele året og 2025 fra januar til juli og målet for 2025. Den røde søylen viser estimatet for 2025 hvis vi fortsetter å kaste like mye.</p>
             <p>Hvis vi skal nå målet for 2025 må vi ikke kaste mer en 85Kg matavfall resten av året</p>
         </section>
         <section class="modul">
-            <h3>Status: bruk av papir</h3>
-            <p>Vi har et overordnet mål om å redusere papirbruken i Gløde med 30%</p>
-            <h4>Måltall</h4>
+            <h3 style="text-align: left;">Status: bruk av papir</h3>
+            <p style="text-align: left;">Vi har et overordnet mål om å redusere papirbruken i Gløde med 30%</p>
+            <h4 style="text-align: left;">Måltall</h4>
             <ul>
                 <li>2024-forbruk: 47 500 ark</li>
                 <li>Mål: 30 % reduksjon → vi skal altså ned til maks 33 250 ark i 2025.</li>
             </ul>
-            <h4>Status så langt</h4>
+            <h4 style="text-align: left;">Status så langt</h4>
             <ul>
                 <li>Innkjøp hittil i 2025: 12 500 ark 
 For å sjekke status må vi se på tempoet i forbruket: </li>
@@ -83,12 +82,15 @@ For å sjekke status må vi se på tempoet i forbruket: </li>
                 <li>Det gir et snitt på ca. 1 389 ark per måned. </li>
                 <li>Ganger vi opp for hele 2025 (12 måneder): ca. 16 667 ark totalt. </li>
             </ul>
-            <h4>Sammenligning </h4>
+            <h4 style="text-align: left;">Sammenligning </h4>
             <ul>
                 <li>Mål for 2025: 33 250 ark</li>
                 <li>Estimert faktisk forbruk: 16 667 ark ➡️ Vi ligger godt under målet og ser ut til å klare en reduksjon på rundt 65 % (!). </li>
             </ul>
-            <h4>Videre tiltak for å holde nivået lavt </h4>
+            <div class="canvas-container">
+                <canvas id="use-of-paper" width="600" height="400"></canvas>
+            </div>
+            <h4 style="text-align: left;">Videre tiltak for å holde nivået lavt </h4>
             <p style="margin: 0; text-align: start;">Selv om vi er foran skjema, er det lurt å ha gode vaner: </p>
             <ul style="margin-top: 0;">
                 <li>Digitale vaner: Ta minst mulig utskrift! </li>
@@ -142,15 +144,13 @@ For å sjekke status må vi se på tempoet i forbruket: </li>
                     </tr>
                 </table>
             </div>
+            <br>
             <h3>Havnevegen – Jan–Jul 2025</h3>
-            <ul>
-                <li>Forbrenning: 3,16 tonn → 1,14 tonn CO₂e utslipp</li>
-                <li>Papp/papir: 2,08 tonn → –2,08 tonn CO₂e spart</li>
-                <li>Trevirke: 0,74 tonn → –0,30 tonn CO₂e spart</li>
-                <li>EE-avfall: 0,76 tonn → –1,14 tonn CO₂e spart</li>
-                <li>Netto effekt: ≈ –2,38 tonn CO₂e (mer spart enn sluppet ut)</li>
-            </ul>
-            <h4>Noen sammenligninger</h4>
+            <div class="canvas-container">
+                <canvas id="emission-Hanevegen" class="canvas" width="600" height="400"></canvas>
+            </div>
+            <p>På grafen over ser du mengden tonn avfal som blir bren og avfall som blir resirkulert. Kolonnen i rødt er CO₂e som blir slippet ut mens det i grønt er CO₂e som blir spart.</p>
+            <h4 style="text-align: left;">Noen sammenligninger</h4>
             <h4 style="text-align: start;">Utslipp</h4>
             <ul>
                 <li>Forbrenning: 1,14 tonn CO₂e 
@@ -176,12 +176,108 @@ For å sjekke status må vi se på tempoet i forbruket: </li>
                 </li>
             </ul>
         </section>
-        <section></section>
+        <section class="modul">
+            <h2>Gjenbruk av IT-utstyr - Gløde Data</h2>
+            <p class="info">
+                En viktig del av Mjåtveits miljøresultater kommer fran virksomheten til Gløde Data.
+                Avdelingen jobber med sikker sletting av data og gjenbruk av datamaskiner, bl.a. i samarbeid med IKT Nordhordaland.
+            </p>
+            <p>I første halvår 2025 ble det registrert:</p>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <tr>
+                        <th>Periode</th>
+                        <th>Antall mottatte (laptop/stasjonær)</th>
+                        <th>Antall solgt til gjenbruk</th>
+                        <th>Gjenbruksprosent</th>
+                    </tr>
+                    <tr>
+                        <td>Jan-Juli 2025</td>
+                        <td>886</td>
+                        <td>82</td>
+                        <td>9,6%</td>
+                    </tr>
+                </table>
+            </div>
+            <h4 style="text-align: start;">Gjenbruk av IT-utstyr gir flere miljøgevinster</h4>
+            <ul>
+                <li>Redusert avfallsmengder - maskiner holdes i bruk lenge.</li>
+                <li>Sparte ressurser - mindre behov for nyproduksjon av metaller, plast og elektronikk-komponent</li>
+                <li>Redusert CO₂e - produksjon av en ny bærbar PC kan gi utslipp på 200-400 kg CO₂e.</li>
+            </ul>
+            <p style="text-align: start;">Videre arbeid med å øke gjenbruksprosenten vil kunne gi betydelig miljøbesparelser og styrke Mjåtveits allerede høye sorteringsgrad.</p>
+            <h4>Sammenligning med andre</h4>
+            <div class="flex">
+                <img class="img" src="/img/fox.jpg" alt="">
+                <p class="info">Foreløpige tall fra SSB viser at de fleste norske virksomheter leverer brukt IT-utstyr som EE-avfall til gjenvinning, og at gjenbruk er langt mindre vanlig (SSB). Vår gjenbruksandel på 9,3 % ligger dermed høyere enn det som ser ut til å være normen. 
+                   Noen aktører, som offentlig sektor, rapporterer betydelig høyere andeler for enkelte enhetstyper (f.eks. bærbare PC-er opp mot 89 % i statlige ordninger) <b style="color: yellow;">(Green Forum)</b>. 
+                   Tallene her er hentet fra åpne kilder og ikke kildekritisk gjennomgått. Vi bør se nærmere på hvordan vi kan sammenligne oss mer presist med andre, og vurdere mål for økt gjenbruk fremover. 
+               </p>
+            </div>
+            
+            <h4>CO₂e-besparelse fra gjenbruk av datamaskiner</h4>
+            <p>I første halvår 2025 ble 82 datamaskiner solgt til gjenbruk.
+               Dette betyr at vi unngik klimagassutslipp fra produksjon av tilsvarende nye maskiner.
+               Hvor mye dette utgjør, avhenger av type maskin, men utslippet for å produsere en ny PC ligger ofte mellom 150 og 360 kg CO₂e per enhet (kilder: Apple, Circular Computing m.fl.).
+            </p>
+            <p style="text-align: start;">💻 Gjenbruk av datamaskiner</p>
+            <ul>
+                <li>82 PC-er gjenbruk → 12-26 tonn CO₂e spart.</li>
+                <li>Dette er like mye som oppvarming av en hel liten boligblokk i et år.
+                    Gjennom sortering og gjenbruk har vi spart mer CO₂e enn vi har sluppet - og bidratt til sirkulær ressursbruk.
+                </li>
+            </ul>
+            <h4>Hva betyr CO₂e?</h4>
+            <p>CO₂e står for karbondioksid-ekvivalenter – en felles måleenhet som brukes for å summere effekten av ulike klimagasser. 
+               Den gjør det mulig å sammenligne utslipp av for eksempel metan, lystgass og CO₂ ved å regne alt om til hvor mye CO₂ det tilsvarer i klimaeffekt. 
+               Disse beregningene viser hvor mye klimagassutslipp vi unngår når vi gjenbruker datamaskiner i stedet for å kjøpe nye. Tabellen under gir et anslag for første halvår 2025. 
+               Med dette som grunnlag kan vi anslå at gjenbruket vårt har spart3: 
+            </p>
+            <div style="display: flex; justify-content: center;">
+                <table>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Per enhet (kg CO₂e)</th>
+                        <th>Total spart (tonn CO₂e)</th>
+                    </tr>
+                    <tr>
+                        <td>Konservativ</td>
+                        <td>150</td>
+                        <td>12,3</td>
+                    </tr>
+                    <tr>
+                        <td>Typisk</td>
+                        <td>250</td>
+                        <td>20,5</td>
+                    </tr>
+                    <tr>
+                        <td>Høy/Pro-modell</td>
+                        <td>300</td>
+                        <td>24,6</td>
+                    </tr>
+                    <tr>
+                        <td>Remanufakcturing-estimat</td>
+                        <td>316</td>
+                        <td>25,9</td>
+                    </tr>
+                </table>
+            </div>
+            <p>Dette er et grovt anslag basert på åpne kilder og gir en pekepinn på miljøgevinsten. 
+               Jo flere maskiner vi kan gjenbruke, desto større vil besparelsen bli fremover.</p>
+        </section>
+        <section>
+            <h4>Mål 2025-2026</h4>
+            <ul>
+                <li>Havnevegen: Redusere forbrenning til under 25 % i 2026.</li>
+                <li>Havnevegen: Øke sorteringsgrad til minst 68 % i 2026</li>
+                <li>Mjåtveit: Beholder sorteringsgrad over 87 % og forbrenning under 8 % i 2026</li>
+            </ul>
+        </section>
     </main>
     <footer>
         <div>
             <h3>Kontakt oss</h3>
-            <p>totallynotaburneraccount@mafia.maf</p>
+            <a href="https://glode.no/glode/tilsette/">https://glode.no/glode/tilsette/</a>
         </div>
         <div>
             <p>Kilder</p>

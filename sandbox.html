@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RnD and testing</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js" defer></script>
     <style>
         .pallet{
@@ -14,6 +15,10 @@
     </style>
 </head>
 <body>
+    <div>
+        <label for="dark-mode">Dark Mode</label>
+        <input type="checkbox" name="dark-mode" id="dark-mode"> 
+    </div>
     <a href="index.html">back</a>
     <div class="pallet" style="background-color: var(--color-primary);">primary</div>
     <div class="pallet" style="background-color: var(--color-secondary);">secondary</div>
@@ -22,5 +27,75 @@
     <div class="pallet" style="background-color: var(--color-text); color: black;">text</div>
     <div class="pallet" style="background-color: var(--color-border); color: black;">border</div>
     <p>CO&#8322;</p>
+    <canvas id="myChart"></canvas>
+    <script>
+        
+const labels = ['jan-juli 2024 Havnevegen', 'jan-juli 2025 Havnevegen', 'Hele 2024 Havnevegen', 'jan-juli 2024 Mjåtveit', 'jan-juli 2025 Mjåtveit', 'Hele 2024 Mjåtveit'];
+
+const data = {
+    datasets: [{
+        type: 'bar',
+        label: 'Total levert (kg)',
+        data: [12000, 7000, 18000, 5300, 7500, 11000],
+        hoverBackgroundColor: '#2e7d32',
+        hoverBorderColor: '#2e7d32',
+        yAxisID: 'y',
+    }, {
+        type: 'line',
+        label: 'Sorteringsgrad (%)',
+        data: [66.66666666666667, 66.66666666666667, 61.111111111111114, 80.55555555555556, 88.88888888888889, 86.11111111111111],
+        yAxisID: 'y1',
+    }],
+    labels: labels
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+    responsive: true,
+    interaction: {
+        mode: 'index',
+        intersect: false,
+    },
+    stacked: false,
+    plugins: {
+        title: {
+        display: true,
+        text: 'Total levert og sorteringsgrad'
+        }
+    },
+    scales: {
+        y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            title: {
+                display: true,
+                text: 'Total levert (kg)'
+            }
+        },
+        y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            title: {
+                display: true,
+                text: 'Sorteringsgrad (%)'
+            },
+            grid: {
+                drawOnChartArea: false // Prevents grid lines from overlapping
+            },
+            min: 0,
+            max: 100
+        }
+    }
+    }
+};
+
+// Render chart
+new Chart(document.getElementById('myChart'), config);
+        
+    </script>
 </body>
 </html>
